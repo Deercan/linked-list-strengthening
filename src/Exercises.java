@@ -59,7 +59,7 @@ public class Exercises {
         if(head == null || length(head) == 1){
             return null;
         }
-        
+
         ListNode current = head;
         ListNode lastNode = null;
         while (current.next != null){
@@ -83,7 +83,15 @@ public class Exercises {
      * @return the minimum value in the list 
      */
     public static int min(ListNode head) {
-        return -1;
+        int min = Integer.MAX_VALUE;
+        ListNode current = head;
+        while (current != null) {
+            if(current.data < min){
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
     }
 
     /**
